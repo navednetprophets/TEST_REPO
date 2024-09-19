@@ -1,0 +1,54 @@
+<mat-drawer-container class="vh-100 bg-white" (window:resize)="onWindowResize($event)">
+  <mat-drawer #drawer [mode]="isWidthSmallerThan576 ? 'over' : 'side'" [opened]="isWidthSmallerThan576 ? false : true"
+    class="border-sidenav">
+    <div class="container sidebar-container">
+      <div class="row justify-content-center mx-0 p-4 pe-0 gap-4">
+        <button mat-flat-button class="h-auto p-4 sidenav-logo border-bottom" routerLink="/home">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1224px-NASA_logo.svg.png"
+            class="w-100" height="80" />
+        </button>
+        <button mat-flat-button class="sidenav-btn" routerLink="/home">
+          <div class="home-btn sidenav-btn-icon"></div>
+          HOME
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <div class="container-fluid p-0">
+    <div class="row h5 fw-bold m-0 p-2 border-bottom align-items-center justify-content-between header-wrapper g-0">
+      <div class="d-flex justify-content-center align-items-center w-auto">
+        <button type="button" mat-button (click)="drawer.toggle()" class="sidenav-toggler">
+          <mat-icon class="m-0">menu</mat-icon>
+        </button>
+        <div class="header-app-icon-wrapper cursor-pointer" routerLink="/home">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1224px-NASA_logo.svg.png"
+            class="app-icon-img" />
+        </div>
+      </div>
+      <div ngbDropdown class="d-inline-block h-100 w-auto">
+        <button type="button" mat-flat-button id="profileDropdown" ngbDropdownToggle class="profile-btn">
+          <ng-template #defaultPic>
+            <img src="/assets/images/default-user.svg" class="profile-img object-fit-contain p-1 border"
+              alt="profile-img" />
+          </ng-template>
+        </button>
+        <!-- <div ngbDropdownMenu aria-labelledby="profileDropdown" class="p-0">
+          <div ngbDropdownItem class="p-2 border-bottom"></div>
+          <div ngbDropdownItem class="p-2">
+            <button
+              mat-flat-button
+              type="button"
+              color="warn"
+              class="fw-bold w-100 logout-btn"
+            >
+              LOGOUT
+            </button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>
