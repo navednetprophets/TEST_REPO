@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { HomeFormComponent } from './home-form/home-form.component';
 
 export const homeRoutes: Routes = [
   {
@@ -15,4 +16,8 @@ export const homeRoutes: Routes = [
         (comp) => comp.StepTwoComponent
       ),
   },
+  {
+    path: '',
+    component: HomeFormComponent,
+  }
 ];

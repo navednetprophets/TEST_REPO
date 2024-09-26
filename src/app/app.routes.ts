@@ -15,9 +15,5 @@ export const routes: Routes = [
       import('./pages/pages.component').then((comp) => comp.PagesComponent),
     loadChildren: () =>
       import('./pages/pages.routes').then((routes) => routes.pagesRoutes),
-  },
-  {
-    path: 'golu',
-    component: SidenavComponent
   }
 ];
