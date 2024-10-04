@@ -16,8 +16,8 @@ export const homeRoutes: Routes = [
         (comp) => comp.StepTwoComponent
       ),
   },
-  {
-    path: '',
-    component: HomeFormComponent,
-  }
+  // {
+  //   path: '',
+  //   component: HomeFormComponent,
+  // }
 ];
